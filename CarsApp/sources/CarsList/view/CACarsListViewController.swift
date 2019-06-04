@@ -19,7 +19,7 @@ class CACarsListViewController: UIViewController {
         
         viewModel = CACarsListViewModel(viewController: self,
                             dataSource: CACarsDataSource(),
-                            networkManager: CANetworkManager())
+                            networkManager: CANetworkManager(imageDownloadManager: CAImageDownloadManager.shared))
         viewModel.configure()
         viewModel.fetchCars()
     }

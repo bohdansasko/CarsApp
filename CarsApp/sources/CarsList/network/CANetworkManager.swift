@@ -11,12 +11,18 @@ import Moya
 
 protocol CANetworkProtocol {
     var apiProvider: MoyaProvider<CACarsAPI> { get }
+    var imageDownloadManager: CAImageDownloadManagerProtocol { get }
     
     func fetchCars(_ completion: @escaping (Result<CACarsResult?, Error>) -> Void)
 }
 
 class CANetworkManager: CANetworkProtocol {
     var apiProvider = MoyaProvider<CACarsAPI>()
+    var imageDownloadManager: CAImageDownloadManagerProtocol
+    
+    init(imageDownloadManager: CAImageDownloadManagerProtocol) {
+        self.imageDownloadManager = imageDownloadManager
+    }
     
     func fetchCars(_ completion: @escaping (Result<CACarsResult?, Error>) -> Void) {
         apiProvider.request(.carsList) { result in

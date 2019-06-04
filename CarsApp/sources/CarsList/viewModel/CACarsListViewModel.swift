@@ -48,7 +48,7 @@ extension CACarsListViewModel: UITableViewDelegate {
             return
         }
         
-        CAImageDownloadManager.shared.downloadImage(car.carImageUrl, indexPath: indexPath) {
+        networkProvider.imageDownloadManager.downloadImage(car.carImageUrl, indexPath: indexPath) {
             image, url, idxPath, error in
             guard
                 let idxPath = idxPath,
@@ -68,6 +68,6 @@ extension CACarsListViewModel: UITableViewDelegate {
         guard let car = self.dataSource.cars?.car(by: indexPath) else {
             return
         }
-        CAImageDownloadManager.shared.slowDownImageDownloadTaskFor(car.carImageUrl)
+        networkProvider.imageDownloadManager.slowDownImageDownloadTaskFor(car.carImageUrl)
     }
 }
