@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  CAAppDelegate.swift
 //  CarsApp
 //
 //  Created by Bogdan Sasko on 6/4/19.
@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class CAAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 

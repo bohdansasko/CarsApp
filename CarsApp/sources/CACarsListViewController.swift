@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CACarsListViewController.swift
 //  CarsApp
 //
 //  Created by Bogdan Sasko on 6/4/19.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CACarsListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
 }
-
