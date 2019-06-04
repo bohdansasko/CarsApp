@@ -9,9 +9,17 @@
 import Foundation
 
 struct CACarsResult {
-    let items: [CACar]
+    private let items: [CACar]
     
     init(from data: Data) throws {
         items = try JSONDecoder().decode([CACar].self, from: data)
+    }
+    
+    func count() -> Int {
+        return items.count
+    }
+    
+    func car(by indexPath: IndexPath) -> CACar {
+        return items[indexPath.row]
     }
 }

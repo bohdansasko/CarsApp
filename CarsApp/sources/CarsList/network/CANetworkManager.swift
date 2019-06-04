@@ -9,13 +9,13 @@
 import Foundation
 import Moya
 
-protocol CANetworkable {
+protocol CANetworkProtocol {
     var apiProvider: MoyaProvider<CACarsAPI> { get }
     
     func fetchCars(_ completion: @escaping (Result<CACarsResult?, Error>) -> Void)
 }
 
-class CANetworkManager: CANetworkable {
+class CANetworkManager: CANetworkProtocol {
     var apiProvider = MoyaProvider<CACarsAPI>()
     
     func fetchCars(_ completion: @escaping (Result<CACarsResult?, Error>) -> Void) {

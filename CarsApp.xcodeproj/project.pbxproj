@@ -16,6 +16,11 @@
 		2078B33322A6CD5F00A2ACA0 /* CACarsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B33222A6CD5F00A2ACA0 /* CACarsResult.swift */; };
 		2078B33522A6CEBB00A2ACA0 /* CACarsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B33422A6CEBB00A2ACA0 /* CACarsAPI.swift */; };
 		2078B33822A6DE4C00A2ACA0 /* CANetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B33722A6DE4C00A2ACA0 /* CANetworkManager.swift */; };
+		20D9D5D022A7055D009675FC /* CACarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D9D5CF22A7055D009675FC /* CACarListCell.swift */; };
+		20D9D5D222A70C97009675FC /* CACarsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D9D5D122A70C97009675FC /* CACarsDataSource.swift */; };
+		20D9D5D422A70CDD009675FC /* CACarsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D9D5D322A70CDD009675FC /* CACarsListViewModel.swift */; };
+		20D9D5D722A712F9009675FC /* CACarsListViewControllerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D9D5D622A712F9009675FC /* CACarsListViewControllerInputProtocol.swift */; };
+		20D9D5DB22A71322009675FC /* CACarsListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D9D5DA22A71322009675FC /* CACarsListViewModelProtocol.swift */; };
 		45F6A52128B67218BCC04B46 /* Pods_CarsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDC2E0E748D8ADDCE282D9B /* Pods_CarsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +37,11 @@
 		2078B33222A6CD5F00A2ACA0 /* CACarsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsResult.swift; sourceTree = "<group>"; };
 		2078B33422A6CEBB00A2ACA0 /* CACarsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsAPI.swift; sourceTree = "<group>"; };
 		2078B33722A6DE4C00A2ACA0 /* CANetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CANetworkManager.swift; sourceTree = "<group>"; };
+		20D9D5CF22A7055D009675FC /* CACarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarListCell.swift; sourceTree = "<group>"; };
+		20D9D5D122A70C97009675FC /* CACarsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsDataSource.swift; sourceTree = "<group>"; };
+		20D9D5D322A70CDD009675FC /* CACarsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsListViewModel.swift; sourceTree = "<group>"; };
+		20D9D5D622A712F9009675FC /* CACarsListViewControllerInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsListViewControllerInputProtocol.swift; sourceTree = "<group>"; };
+		20D9D5DA22A71322009675FC /* CACarsListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsListViewModelProtocol.swift; sourceTree = "<group>"; };
 		5EDC2E0E748D8ADDCE282D9B /* Pods_CarsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C644C2D06BB655D3EF76AE27 /* Pods-CarsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsApp.debug.xcconfig"; path = "Target Support Files/Pods-CarsApp/Pods-CarsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,8 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				2078B33622A6D55400A2ACA0 /* network */,
-				2078B33122A6CAAB00A2ACA0 /* view */,
 				2078B33022A6CAA400A2ACA0 /* model */,
+				2078B33122A6CAAB00A2ACA0 /* view */,
+				20D9D5D522A71283009675FC /* viewModel */,
 			);
 			path = CarsList;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 			children = (
 				2078B32E22A6CAA000A2ACA0 /* CACar.swift */,
 				2078B33222A6CD5F00A2ACA0 /* CACarsResult.swift */,
+				20D9D5D122A70C97009675FC /* CACarsDataSource.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -134,7 +146,9 @@
 		2078B33122A6CAAB00A2ACA0 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				20D9D5D622A712F9009675FC /* CACarsListViewControllerInputProtocol.swift */,
 				2078B31A22A6C43500A2ACA0 /* CACarsListViewController.swift */,
+				20D9D5CF22A7055D009675FC /* CACarListCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -146,6 +160,15 @@
 				2078B33722A6DE4C00A2ACA0 /* CANetworkManager.swift */,
 			);
 			path = network;
+			sourceTree = "<group>";
+		};
+		20D9D5D522A71283009675FC /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20D9D5DA22A71322009675FC /* CACarsListViewModelProtocol.swift */,
+				20D9D5D322A70CDD009675FC /* CACarsListViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		785CC63C86FC8063840F80DB /* Frameworks */ = {
@@ -281,11 +304,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2078B33822A6DE4C00A2ACA0 /* CANetworkManager.swift in Sources */,
+				20D9D5D222A70C97009675FC /* CACarsDataSource.swift in Sources */,
+				20D9D5D022A7055D009675FC /* CACarListCell.swift in Sources */,
 				2078B33322A6CD5F00A2ACA0 /* CACarsResult.swift in Sources */,
 				2078B32F22A6CAA000A2ACA0 /* CACar.swift in Sources */,
 				2078B33522A6CEBB00A2ACA0 /* CACarsAPI.swift in Sources */,
+				20D9D5D722A712F9009675FC /* CACarsListViewControllerInputProtocol.swift in Sources */,
+				20D9D5DB22A71322009675FC /* CACarsListViewModelProtocol.swift in Sources */,
 				2078B31B22A6C43500A2ACA0 /* CACarsListViewController.swift in Sources */,
 				2078B31922A6C43500A2ACA0 /* CAAppDelegate.swift in Sources */,
+				20D9D5D422A70CDD009675FC /* CACarsListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
