@@ -18,7 +18,7 @@ struct CACar {
     let color: String
     let series: String
     let fuelType: String
-    let fuelLevel: String
+    let fuelLevel: Double
     let transmission: String
     let licensePlate: String
     let latitude: Double
@@ -63,7 +63,7 @@ extension CACar: Decodable {
         color = try container.decode(String.self, forKey: .color)
         series = try container.decode(String.self, forKey: .series)
         fuelType = try container.decode(String.self, forKey: .fuelType)
-        fuelLevel = try container.decode(String.self, forKey: .fuelLevel)
+        fuelLevel = try container.decode(Double.self, forKey: .fuelLevel)
         
         transmission = try container.decode(String.self, forKey: .transmission)
         licensePlate = try container.decode(String.self, forKey: .licensePlate)
