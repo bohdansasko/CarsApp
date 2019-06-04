@@ -15,4 +15,6 @@ protocol CACarsListViewControllerInputProtocol: class {
     func refreshCarsList()
     
     func setActivityIndicator(isHidden: Bool)
+    
+    func cellForRow(at indexPath: IndexPath) -> UITableViewCell?
 }

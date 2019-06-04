@@ -33,7 +33,8 @@ class CACarListCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        updateCell(with: nil, carImage: nil)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

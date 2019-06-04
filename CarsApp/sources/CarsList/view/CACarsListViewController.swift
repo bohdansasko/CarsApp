@@ -40,6 +40,10 @@ extension CACarsListViewController: CACarsListViewControllerInputProtocol {
     func setActivityIndicator(isHidden: Bool) {
         activityIndicator.isHidden = isHidden
     }
+    
+    func cellForRow(at indexPath: IndexPath) -> UITableViewCell? {
+        return carsList.cellForRow(at: indexPath)
+    }
 }
 
 

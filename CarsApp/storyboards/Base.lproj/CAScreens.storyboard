@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="151" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iT9-90-94m">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="746"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CACarListCell" rowHeight="151" id="QSP-Sj-H1d" customClass="CACarListCell" customModule="CarsApp" customModuleProvider="target">
@@ -231,14 +231,29 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vX4-iD-Lef">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-c6-PT7">
+                                <rect key="frame" x="0.0" y="834" width="414" height="62"/>
+                                <color key="backgroundColor" red="0.53079974649999995" green="0.70554322000000003" blue="0.30179500580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="L3q-BQ-fqF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-7" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Cars on map">
+                                    <color key="titleColor" red="0.97260409589999997" green="0.97247141599999998" blue="0.97646456960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QMe-c6-PT7" secondAttribute="bottom" id="NSQ-0b-9IX"/>
                             <constraint firstItem="vX4-iD-Lef" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S21-Wo-iL1"/>
                             <constraint firstItem="iT9-90-94m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YyK-GS-ubz"/>
                             <constraint firstItem="vX4-iD-Lef" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dOl-4C-CSv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iT9-90-94m" secondAttribute="bottom" id="gVf-cg-sz6"/>
+                            <constraint firstItem="QMe-c6-PT7" firstAttribute="top" secondItem="iT9-90-94m" secondAttribute="bottom" id="dcx-jx-zwQ"/>
+                            <constraint firstItem="QMe-c6-PT7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nrD-KV-D4S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iT9-90-94m" secondAttribute="trailing" id="rpB-qO-GlH"/>
+                            <constraint firstAttribute="trailing" secondItem="QMe-c6-PT7" secondAttribute="trailing" id="w4J-SQ-kZd"/>
                             <constraint firstItem="iT9-90-94m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ztB-31-MBQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
