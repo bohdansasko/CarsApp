@@ -13,6 +13,7 @@
 		2078B32022A6C43600A2ACA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2078B31F22A6C43600A2ACA0 /* Assets.xcassets */; };
 		2078B32322A6C43600A2ACA0 /* CALaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2078B32122A6C43600A2ACA0 /* CALaunchScreen.storyboard */; };
 		2078B32F22A6CAA000A2ACA0 /* CACar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B32E22A6CAA000A2ACA0 /* CACar.swift */; };
+		2078B33322A6CD5F00A2ACA0 /* CACars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B33222A6CD5F00A2ACA0 /* CACars.swift */; };
 		45F6A52128B67218BCC04B46 /* Pods_CarsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDC2E0E748D8ADDCE282D9B /* Pods_CarsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		2078B32222A6C43600A2ACA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CALaunchScreen.storyboard; sourceTree = "<group>"; };
 		2078B32422A6C43600A2ACA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2078B32E22A6CAA000A2ACA0 /* CACar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACar.swift; sourceTree = "<group>"; };
+		2078B33222A6CD5F00A2ACA0 /* CACars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACars.swift; sourceTree = "<group>"; };
 		5EDC2E0E748D8ADDCE282D9B /* Pods_CarsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C644C2D06BB655D3EF76AE27 /* Pods-CarsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsApp.debug.xcconfig"; path = "Target Support Files/Pods-CarsApp/Pods-CarsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				2078B32E22A6CAA000A2ACA0 /* CACar.swift */,
+				2078B33222A6CD5F00A2ACA0 /* CACars.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2078B33322A6CD5F00A2ACA0 /* CACars.swift in Sources */,
 				2078B32F22A6CAA000A2ACA0 /* CACar.swift in Sources */,
 				2078B31B22A6C43500A2ACA0 /* CACarsListViewController.swift in Sources */,
 				2078B31922A6C43500A2ACA0 /* CAAppDelegate.swift in Sources */,
