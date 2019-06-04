@@ -1,5 +1,5 @@
 //
-//  CACars.swift
+//  CACarsResult.swift
 //  CarsApp
 //
 //  Created by Bogdan Sasko on 6/4/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CACars {
+struct CACarsResult {
     let items: [CACar]
     
     init(from data: Data) throws {
