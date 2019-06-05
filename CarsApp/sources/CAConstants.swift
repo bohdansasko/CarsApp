@@ -11,3 +11,7 @@ import Foundation
 enum CAStorybordSegue: String {
     case toCarsMap
 }
+
+enum CALocalizationKey: String {
+    case carsLocations = "Cars Location"
+}

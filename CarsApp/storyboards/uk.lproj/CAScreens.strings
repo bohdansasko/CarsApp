@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "CLEAN"; ObjectID = "1AN-Au-mHO"; */
+"1AN-Au-mHO.text" = "ЧИСТО";
+
+/* Class = "UILabel"; text = "Mini"; ObjectID = "2fY-bz-ou4"; */
+"2fY-bz-ou4.text" = "Міні";
+
+/* Class = "UILabel"; text = "License plate"; ObjectID = "2jP-QH-d5L"; */
+"2jP-QH-d5L.text" = "Лицензія водія";
+
+/* Class = "UILabel"; text = "Make"; ObjectID = "3Bm-yF-Ql7"; */
+"3Bm-yF-Ql7.text" = "Фірма";
+
+/* Class = "UILabel"; text = "0.4"; ObjectID = "67z-od-KEp"; */
+"67z-od-KEp.text" = "0.4";
+
+/* Class = "UILabel"; text = "Fuel level"; ObjectID = "6Dc-DV-RKE"; */
+"6Dc-DV-RKE.text" = "Рівень палива";
+
+/* Class = "UIViewController"; title = "Cars Location"; ObjectID = "9n6-2j-2Dv"; */
+"9n6-2j-2Dv.title" = "Розсташування машин";
+
+/* Class = "UINavigationItem"; title = "Cars"; ObjectID = "CGO-N2-Dp5"; */
+"CGO-N2-Dp5.title" = "Машини";
+
+/* Class = "UILabel"; text = "BWM"; ObjectID = "G3U-3U-hhH"; */
+"G3U-3U-hhH.text" = "BWM";
+
+/* Class = "UILabel"; text = "Transmission"; ObjectID = "MmT-xO-daY"; */
+"MmT-xO-daY.text" = "Коробка передач";
+
+/* Class = "UILabel"; text = "D"; ObjectID = "Osw-2q-6sF"; */
+"Osw-2q-6sF.text" = "D";
+
+/* Class = "UIButton"; normalTitle = "Cars on map"; ObjectID = "QMe-c6-PT7"; */
+"QMe-c6-PT7.normalTitle" = "Машини на карті";
+
+/* Class = "UILabel"; text = "M-VO0244"; ObjectID = "Sf8-n4-bgc"; */
+"Sf8-n4-bgc.text" = "M-VO0244";
+
+/* Class = "UILabel"; text = "Fuel type"; ObjectID = "UIg-zQ-Zaa"; */
+"UIg-zQ-Zaa.text" = "Тип палива";
+
+/* Class = "UILabel"; text = "Group"; ObjectID = "dWd-Nh-ouB"; */
+"dWd-Nh-ouB.text" = "Група";
+
+/* Class = "UILabel"; text = "Series"; ObjectID = "e8n-MW-bRp"; */
+"e8n-MW-bRp.text" = "Серія";
+
+/* Class = "UILabel"; text = "M"; ObjectID = "jvb-Bw-r1x"; */
+"jvb-Bw-r1x.text" = "M";
+
+/* Class = "UILabel"; text = "Cleanliness"; ObjectID = "no7-hW-3sv"; */
+"no7-hW-3sv.text" = "Чистота";
+
+/* Class = "UILabel"; text = "Owner"; ObjectID = "v3g-aC-yah"; */
+"v3g-aC-yah.text" = "Власник";
+
+/* Class = "UILabel"; text = "Mini"; ObjectID = "z2l-dt-T8T"; */
+"z2l-dt-T8T.text" = "Міні";
+
+/* Class = "UILabel"; text = "Vanessa"; ObjectID = "zMs-ex-xhf"; */
+"zMs-ex-xhf.text" = "Ванесса";

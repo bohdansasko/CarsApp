@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  CarsApp
+
+  Created by Bogdan Sasko on 6/6/19.
+  Copyright © 2019 Vinso. All rights reserved.
+*/
+
+/* title for cars locations view controller */
+"Cars Location" = "Cars Location";
