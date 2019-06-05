@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2023422422A85945007D1CB3 /* CACarsLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023422322A85945007D1CB3 /* CACarsLocationsViewModel.swift */; };
+		2023422722A8595F007D1CB3 /* CACarsLocationsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023422622A8595F007D1CB3 /* CACarsLocationsViewModelProtocol.swift */; };
+		2023422A22A85A95007D1CB3 /* CACarAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023422922A85A95007D1CB3 /* CACarAnnotation.swift */; };
+		2023422D22A8624E007D1CB3 /* CAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023422C22A8624E007D1CB3 /* CAConstants.swift */; };
+		2048051F22A78AC60026F96B /* CACarsLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048051E22A78AC60026F96B /* CACarsLocationsViewController.swift */; };
 		2078B31922A6C43500A2ACA0 /* CAAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B31822A6C43500A2ACA0 /* CAAppDelegate.swift */; };
 		2078B31B22A6C43500A2ACA0 /* CACarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B31A22A6C43500A2ACA0 /* CACarsListViewController.swift */; };
 		2078B31E22A6C43500A2ACA0 /* CAScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2078B31C22A6C43500A2ACA0 /* CAScreens.storyboard */; };
@@ -28,6 +33,11 @@
 
 /* Begin PBXFileReference section */
 		11DD0225CE7F8D49F8B68C3B /* Pods-CarsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsApp.release.xcconfig"; path = "Target Support Files/Pods-CarsApp/Pods-CarsApp.release.xcconfig"; sourceTree = "<group>"; };
+		2023422322A85945007D1CB3 /* CACarsLocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsLocationsViewModel.swift; sourceTree = "<group>"; };
+		2023422622A8595F007D1CB3 /* CACarsLocationsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsLocationsViewModelProtocol.swift; sourceTree = "<group>"; };
+		2023422922A85A95007D1CB3 /* CACarAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarAnnotation.swift; sourceTree = "<group>"; };
+		2023422C22A8624E007D1CB3 /* CAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAConstants.swift; sourceTree = "<group>"; };
+		2048051E22A78AC60026F96B /* CACarsLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsLocationsViewController.swift; sourceTree = "<group>"; };
 		2078B31522A6C43500A2ACA0 /* CarsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2078B31822A6C43500A2ACA0 /* CAAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAppDelegate.swift; sourceTree = "<group>"; };
 		2078B31A22A6C43500A2ACA0 /* CACarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsListViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +81,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2023422522A85959007D1CB3 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2023422322A85945007D1CB3 /* CACarsLocationsViewModel.swift */,
+				2023422622A8595F007D1CB3 /* CACarsLocationsViewModelProtocol.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		2023422822A85A7C007D1CB3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2048051E22A78AC60026F96B /* CACarsLocationsViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2023422B22A85A98007D1CB3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2023422922A85A95007D1CB3 /* CACarAnnotation.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2048052022A78C010026F96B /* CarsLocations */ = {
+			isa = PBXGroup;
+			children = (
+				2023422B22A85A98007D1CB3 /* model */,
+				2023422822A85A7C007D1CB3 /* view */,
+				2023422522A85959007D1CB3 /* viewModel */,
+			);
+			path = CarsLocations;
+			sourceTree = "<group>";
+		};
 		2078B30C22A6C43500A2ACA0 = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				2078B31822A6C43500A2ACA0 /* CAAppDelegate.swift */,
+				2023422C22A8624E007D1CB3 /* CAConstants.swift */,
 				20D9D5DC22A718B9009675FC /* ImageDownloadManager */,
 				2078B32D22A6CA6500A2ACA0 /* CarsList */,
+				2048052022A78C010026F96B /* CarsLocations */,
 			);
 			path = sources;
 			sourceTree = "<group>";
@@ -322,14 +369,19 @@
 				20D9D5D022A7055D009675FC /* CACarListCell.swift in Sources */,
 				20D9D5E022A718B9009675FC /* CAImageDownloadManager.swift in Sources */,
 				2078B33322A6CD5F00A2ACA0 /* CACarsResult.swift in Sources */,
+				2023422A22A85A95007D1CB3 /* CACarAnnotation.swift in Sources */,
 				2078B32F22A6CAA000A2ACA0 /* CACar.swift in Sources */,
 				2078B33522A6CEBB00A2ACA0 /* CACarsAPI.swift in Sources */,
 				20D9D5D722A712F9009675FC /* CACarsListViewControllerInputProtocol.swift in Sources */,
+				2023422722A8595F007D1CB3 /* CACarsLocationsViewModelProtocol.swift in Sources */,
+				2023422422A85945007D1CB3 /* CACarsLocationsViewModel.swift in Sources */,
 				20D9D5DB22A71322009675FC /* CACarsListViewModelProtocol.swift in Sources */,
 				20D9D5DF22A718B9009675FC /* CAOperation.swift in Sources */,
 				2078B31B22A6C43500A2ACA0 /* CACarsListViewController.swift in Sources */,
 				2078B31922A6C43500A2ACA0 /* CAAppDelegate.swift in Sources */,
+				2048051F22A78AC60026F96B /* CACarsLocationsViewController.swift in Sources */,
 				20D9D5D422A70CDD009675FC /* CACarsListViewModel.swift in Sources */,
+				2023422D22A8624E007D1CB3 /* CAConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,11 @@ class CACarsListViewController: UIViewController {
         viewModel.configure()
         viewModel.fetchCars()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        viewModel.prepare(for: segue)
+    }
 }
 
 extension CACarsListViewController: CACarsListViewControllerInputProtocol {
@@ -45,6 +50,3 @@ extension CACarsListViewController: CACarsListViewControllerInputProtocol {
         return carsList.cellForRow(at: indexPath)
     }
 }
-
-
-

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Vinso. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol CACarsListViewModelProtocol {
     var dataSource: CACarsDataSource { get }
@@ -17,4 +17,6 @@ protocol CACarsListViewModelProtocol {
     
     func configure()
     func fetchCars()
+    
+    func prepare(for segue: UIStoryboardSegue)
 }

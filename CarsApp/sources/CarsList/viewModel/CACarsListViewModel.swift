@@ -40,6 +40,16 @@ class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
             self.viewController?.refreshCarsList()
         }
     }
+    
+    func prepare(for segue: UIStoryboardSegue) {
+        guard
+            segue.identifier == CAStorybordSegue.toCarsMap.rawValue,
+            let carsMapViewController = segue.destination as? CACarsLocationsViewController else {
+            return
+        }
+        
+        carsMapViewController.viewModel = CACarsLocationsViewModel(with: carsMapViewController, cars: dataSource.cars!)
+    }
 }
 
 extension CACarsListViewModel: UITableViewDelegate {
