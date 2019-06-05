@@ -9,13 +9,15 @@
 import UIKit
 
 class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
-    weak var viewController: CACarsListViewControllerInputProtocol?
+    weak var viewControllerInput: CACarsListViewControllerInputProtocol?
     
     var dataSource: CACarsDataSource
     var networkProvider: CANetworkProtocol
     
-    required init(viewController: CACarsListViewControllerInputProtocol, dataSource: CACarsDataSource, networkManager: CANetworkProtocol) {
-        self.viewController = viewController
+    var selectedCarIndexPath: IndexPath?
+    
+    required init(viewControllerInput: CACarsListViewControllerInputProtocol, dataSource: CACarsDataSource, networkManager: CANetworkProtocol) {
+        self.viewControllerInput = viewControllerInput
         self.dataSource = dataSource
         self.networkProvider = networkManager
         
@@ -23,11 +25,12 @@ class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
     }
     
     func configure() {
-        viewController?.setupList(dataSource: dataSource, delegate: self)
+        viewControllerInput?.setupList(dataSource: dataSource, delegate: self)
     }
     
     func fetchCars() {
-        viewController?.setActivityIndicator(isHidden: false)
+        viewControllerInput?.setActivityIndicator(isHidden: false)
+        
         networkProvider.fetchCars { result in
             switch result {
             case .success(let carsResult):
@@ -36,48 +39,30 @@ class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
                 self.dataSource.cars = nil
                 print(error.localizedDescription)
             }
-            self.viewController?.setActivityIndicator(isHidden: true)
-            self.viewController?.refreshCarsList()
+            self.viewControllerInput?.setActivityIndicator(isHidden: true)
+            self.viewControllerInput?.refreshCarsList()
         }
     }
     
     func prepare(for segue: UIStoryboardSegue) {
-        guard
-            segue.identifier == CAStorybordSegue.toCarsMap.rawValue,
-            let carsMapViewController = segue.destination as? CACarsLocationsViewController else {
+        guard let carsMapViewController = segue.destination as? CACarsLocationsViewController else {
             return
         }
         
-        carsMapViewController.viewModel = CACarsLocationsViewModel(with: carsMapViewController, cars: dataSource.cars!)
-    }
-}
-
-extension CACarsListViewModel: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let car = dataSource.cars?.car(by: indexPath) else {
-            return
-        }
-        
-        networkProvider.imageDownloadManager.downloadImage(car.carImageUrl, indexPath: indexPath) {
-            image, url, idxPath, error in
+        switch segue.identifier {
+        case CAStorybordSegue.toCarsMap.rawValue:
+            carsMapViewController.viewModel = CACarsLocationsViewModel(with: carsMapViewController, cars: dataSource.cars!)
+        case CAStorybordSegue.toCarMap.rawValue:
             guard
-                let idxPath = idxPath,
-                let carCell = self.viewController?.cellForRow(at: idxPath) as? CACarListCellProtocol,
-                let car = self.dataSource.cars?.car(by: idxPath) else {
+                let selectedCarIndexPath = selectedCarIndexPath,
+                let car = dataSource.cars?.car(by: selectedCarIndexPath) else {
                     return
             }
-            carCell.updateCell(with: car, carImage: image ?? UIImage(named: "mini"))
+            let carsResult = CACarsResult(cars: [car])
+            carsMapViewController.viewModel = CACarsLocationsViewModel(with: carsMapViewController, cars: carsResult)
+            self.selectedCarIndexPath = nil
+        default:
+            break
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let car = self.dataSource.cars?.car(by: indexPath) else {
-            return
-        }
-        networkProvider.imageDownloadManager.slowDownImageDownloadTaskFor(car.carImageUrl)
     }
 }

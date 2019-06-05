@@ -13,6 +13,8 @@ struct CACarsResult {
     
     init() { items = [] }
     
+    init(cars: [CACar]) { items = cars }
+    
     init(from data: Data) throws {
         items = try JSONDecoder().decode([CACar].self, from: data)
     }

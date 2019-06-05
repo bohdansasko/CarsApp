@@ -270,6 +270,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="vX4-iD-Lef" id="xGH-bK-1gw"/>
                         <outlet property="carsList" destination="iT9-90-94m" id="fHd-4D-Ldj"/>
+                        <segue destination="9n6-2j-2Dv" kind="show" identifier="toCarMap" id="LaY-iU-LL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -327,4 +328,7 @@
     <resources>
         <image name="mini" width="140" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LaY-iU-LL3"/>
+    </inferredMetricsTieBreakers>
 </document>

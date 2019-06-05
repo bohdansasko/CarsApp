@@ -17,4 +17,5 @@ protocol CACarsListViewControllerInputProtocol: class {
     func setActivityIndicator(isHidden: Bool)
     
     func cellForRow(at indexPath: IndexPath) -> UITableViewCell?
+    func performSegue(withIdentifier identifier: String)
 }

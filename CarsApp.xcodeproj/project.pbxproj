@@ -13,6 +13,7 @@
 		2023422D22A8624E007D1CB3 /* CAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023422C22A8624E007D1CB3 /* CAConstants.swift */; };
 		2023423022A8768D007D1CB3 /* CALocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2023423222A8768D007D1CB3 /* CALocalizable.strings */; };
 		2023423822A87EBE007D1CB3 /* CACars.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2023423622A87EBE007D1CB3 /* CACars.xcdatamodeld */; };
+		2023423A22A883D8007D1CB3 /* CACarsListViewModel+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023423922A883D8007D1CB3 /* CACarsListViewModel+UITableViewDelegate.swift */; };
 		2048051F22A78AC60026F96B /* CACarsLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048051E22A78AC60026F96B /* CACarsLocationsViewController.swift */; };
 		2078B31922A6C43500A2ACA0 /* CAAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B31822A6C43500A2ACA0 /* CAAppDelegate.swift */; };
 		2078B31B22A6C43500A2ACA0 /* CACarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078B31A22A6C43500A2ACA0 /* CACarsListViewController.swift */; };
@@ -44,6 +45,7 @@
 		2023423422A87710007D1CB3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/CALaunchScreen.strings; sourceTree = "<group>"; };
 		2023423522A87710007D1CB3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/CALocalizable.strings; sourceTree = "<group>"; };
 		2023423722A87EBE007D1CB3 /* CACars.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CACars.xcdatamodel; sourceTree = "<group>"; };
+		2023423922A883D8007D1CB3 /* CACarsListViewModel+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CACarsListViewModel+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		2048051E22A78AC60026F96B /* CACarsLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACarsLocationsViewController.swift; sourceTree = "<group>"; };
 		2078B31522A6C43500A2ACA0 /* CarsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2078B31822A6C43500A2ACA0 /* CAAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAppDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				20D9D5DA22A71322009675FC /* CACarsListViewModelProtocol.swift */,
 				20D9D5D322A70CDD009675FC /* CACarsListViewModel.swift */,
+				2023423922A883D8007D1CB3 /* CACarsListViewModel+UITableViewDelegate.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				2023422722A8595F007D1CB3 /* CACarsLocationsViewModelProtocol.swift in Sources */,
 				2023422422A85945007D1CB3 /* CACarsLocationsViewModel.swift in Sources */,
 				2023423822A87EBE007D1CB3 /* CACars.xcdatamodeld in Sources */,
+				2023423A22A883D8007D1CB3 /* CACarsListViewModel+UITableViewDelegate.swift in Sources */,
 				20D9D5DB22A71322009675FC /* CACarsListViewModelProtocol.swift in Sources */,
 				20D9D5DF22A718B9009675FC /* CAOperation.swift in Sources */,
 				2078B31B22A6C43500A2ACA0 /* CACarsListViewController.swift in Sources */,

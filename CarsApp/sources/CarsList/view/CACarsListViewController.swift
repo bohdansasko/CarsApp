@@ -17,7 +17,8 @@ class CACarsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = CACarsListViewModel(viewController: self,
+        viewModel = CACarsListViewModel(
+                            viewControllerInput: self,
                             dataSource: CACarsDataSource(),
                             networkManager: CANetworkManager(imageDownloadManager: CAImageDownloadManager.shared))
         viewModel.configure()
@@ -48,5 +49,9 @@ extension CACarsListViewController: CACarsListViewControllerInputProtocol {
     
     func cellForRow(at indexPath: IndexPath) -> UITableViewCell? {
         return carsList.cellForRow(at: indexPath)
+    }
+    
+    func performSegue(withIdentifier identifier: String) {
+        performSegue(withIdentifier: identifier, sender: self)
     }
 }
