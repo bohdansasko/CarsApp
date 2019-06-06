@@ -16,7 +16,7 @@ protocol CANetworkProtocol {
     func fetchCars(_ completion: @escaping (Result<CACarsResult?, Error>) -> Void)
 }
 
-class CANetworkManager: CANetworkProtocol {
+final class CANetworkManager: CANetworkProtocol {
     var apiProvider = MoyaProvider<CACarsAPI>()
     var imageDownloadManager: CAImageDownloadManagerProtocol
     

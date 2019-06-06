@@ -9,7 +9,7 @@
 
 import UIKit
 
-class CAOperation: Operation {
+final class CAOperation: Operation {
     var downloadHandler: CAImageDownloadHandler?
     var imageURL: URL!
     

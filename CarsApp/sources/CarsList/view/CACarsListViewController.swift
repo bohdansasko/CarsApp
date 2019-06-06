@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CACarsListViewController: UIViewController {
+final class CACarsListViewController: UIViewController {
     @IBOutlet weak var carsList: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     

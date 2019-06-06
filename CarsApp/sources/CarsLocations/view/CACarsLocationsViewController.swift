@@ -13,7 +13,7 @@ protocol CACarsLocationsViewControllerInputProtocol: class {
     func addAnnotations(_ annotations: [CACarAnnotation])
 }
 
-class CACarsLocationsViewController: UIViewController {
+final class CACarsLocationsViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var viewModel: CACarsLocationsViewModelProtocol!

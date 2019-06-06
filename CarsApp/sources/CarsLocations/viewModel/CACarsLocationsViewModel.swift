@@ -8,7 +8,7 @@
 
 import MapKit
 
-class CACarsLocationsViewModel: CACarsLocationsViewModelProtocol {
+final class CACarsLocationsViewModel: CACarsLocationsViewModelProtocol {
     var kCarAnnotationReuseIdentifier: String { return "CarAnnotation" }
     
     weak var viewControllerInput: CACarsLocationsViewControllerInputProtocol?

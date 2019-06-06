@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
+final class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
     weak var viewControllerInput: CACarsListViewControllerInputProtocol?
     
     var dataSource: CACarsDataSource

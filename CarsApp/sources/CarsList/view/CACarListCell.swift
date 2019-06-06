@@ -16,7 +16,7 @@ protocol CACarListCellProtocol {
 
 // MARK: CACarListCell
 
-class CACarListCell: UITableViewCell {
+final class CACarListCell: UITableViewCell {
     @IBOutlet weak var carImageView: UIImageView!
     
     @IBOutlet weak var ownerNameLabel: UILabel!

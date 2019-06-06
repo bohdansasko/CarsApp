@@ -8,7 +8,7 @@
 
 import CoreData
 
-class CACoreDataManager: CADatabaseProtocol {
+final class CACoreDataManager: CADatabaseProtocol {
     let persistentStore: NSPersistentContainer = {
         let container = NSPersistentContainer(name: kCADatabaseName)
         container.loadPersistentStores(completionHandler: { storeDescription, error in

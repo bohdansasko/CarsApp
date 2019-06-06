@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CACarsDataSource: NSObject {
+final class CACarsDataSource: NSObject {
     var cars: CACarsResult?
     let kCarListCellReuseIdentifier = String(describing: CACarListCell.self)
 }
