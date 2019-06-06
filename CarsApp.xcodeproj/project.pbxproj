@@ -212,8 +212,7 @@
 				20B1BC4B22A9909E00CD97D3 /* ImageStore */,
 				20D9D5DC22A718B9009675FC /* ImageDownloadManager */,
 				2023423F22A88660007D1CB3 /* Database */,
-				2078B32D22A6CA6500A2ACA0 /* CarsList */,
-				2048052022A78C010026F96B /* CarsLocations */,
+				20B1BC5822A9C6F400CD97D3 /* Modules */,
 			);
 			path = sources;
 			sourceTree = "<group>";
@@ -287,6 +286,15 @@
 				20B1BC4C22A997AC00CD97D3 /* CAImageStoreProtocol.swift */,
 			);
 			path = ImageStore;
+			sourceTree = "<group>";
+		};
+		20B1BC5822A9C6F400CD97D3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2078B32D22A6CA6500A2ACA0 /* CarsList */,
+				2048052022A78C010026F96B /* CarsLocations */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		20D9D5D522A71283009675FC /* viewModel */ = {
