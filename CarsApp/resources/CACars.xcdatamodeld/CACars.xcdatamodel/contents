@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CarEntity" representedClassName="CarEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="carImageUrl" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="fuelLevel" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="fuelType" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="innerCleanliness" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="licensePlate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="modelIdentifier" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="modelName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="series" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="transmission" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="CACarEntity" representedClassName="CACarEntity" syncable="YES">
+        <attribute name="carImageUrl" attributeType="String" syncable="YES"/>
+        <attribute name="color" attributeType="String" syncable="YES"/>
+        <attribute name="fuelLevel" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fuelType" attributeType="String" syncable="YES"/>
+        <attribute name="group" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="innerCleanliness" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="licensePlate" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="make" attributeType="String" syncable="YES"/>
+        <attribute name="modelIdentifier" attributeType="String" syncable="YES"/>
+        <attribute name="modelName" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="series" attributeType="String" syncable="YES"/>
+        <attribute name="transmission" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CarEntity" positionX="-63" positionY="-18" width="128" height="285"/>
+        <element name="CACarEntity" positionX="-63" positionY="-18" width="128" height="285"/>
     </elements>
 </model>

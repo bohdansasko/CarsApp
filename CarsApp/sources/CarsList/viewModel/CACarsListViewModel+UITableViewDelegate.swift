@@ -14,7 +14,7 @@ extension CACarsListViewModel: UITableViewDelegate {
             return
         }
         
-        networkProvider.imageDownloadManager.downloadImage(car.carImageUrl, indexPath: indexPath) {
+        networkProvider.imageDownloadManager.downloadImage(car, indexPath: indexPath) {
             image, url, idxPath, error in
             guard
                 let idxPath = idxPath,

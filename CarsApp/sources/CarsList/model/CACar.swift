@@ -73,4 +73,26 @@ extension CACar: Decodable {
         
         carImageUrl = try container.decode(String.self, forKey: .carImageUrl)
     }
+    
+    init(fromEntity carEntity: CACarEntity) {
+        id = carEntity.id ?? ""
+        modelIdentifier = carEntity.modelIdentifier ?? ""
+        modelName = carEntity.modelName ?? ""
+        name = carEntity.name ?? ""
+        make = carEntity.make ?? ""
+
+        group = carEntity.group ?? ""
+        color = carEntity.color ?? ""
+        series = carEntity.series ?? ""
+        fuelType = carEntity.fuelType ?? ""
+        fuelLevel = carEntity.fuelLevel
+
+        transmission = carEntity.transmission ?? ""
+        licensePlate = carEntity.licensePlate ?? ""
+        latitude = carEntity.latitude
+        longitude = carEntity.longitude
+        innerCleanliness = carEntity.innerCleanliness ?? ""
+
+        carImageUrl = carEntity.carImageUrl ?? ""
+    }
 }

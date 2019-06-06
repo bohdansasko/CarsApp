@@ -17,10 +17,11 @@ class CACarsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let imageDownloadManager = CAImageDownloadManager(imageStore: CAImageStore.shared)
         viewModel = CACarsListViewModel(
                             viewControllerInput: self,
                             dataSource: CACarsDataSource(),
-                            networkManager: CANetworkManager(imageDownloadManager: CAImageDownloadManager.shared))
+                            networkManager: CANetworkManager(imageDownloadManager: imageDownloadManager))
         viewModel.configure()
         viewModel.fetchCars()
     }

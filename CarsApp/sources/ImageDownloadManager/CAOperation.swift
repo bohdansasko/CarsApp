@@ -49,6 +49,7 @@ class CAOperation: Operation {
             finish(true)
             return
         }
+        
         executing(true)
         downloadImageFromURL()
     }

@@ -8,17 +8,8 @@
 
 import UIKit
 
-typealias CAImageDownloadHandler = (_ image: UIImage?, _ url: URL, _ indexPath: IndexPath?, _ error: Error?) -> Void
-
-protocol CAImageDownloadManagerProtocol {
-    func downloadImage(_ absoluteImageURL: String, indexPath: IndexPath?, _ completion: @escaping CAImageDownloadHandler)
-    func slowDownImageDownloadTaskFor(_ absoluteImageURL: String)
-}
-
 final class CAImageDownloadManager {
-    static let shared = CAImageDownloadManager()
-    
-    private init() {}
+    var imageStore: CAImageStoreProtocol
     
     private var completionHandler: CAImageDownloadHandler?
     private let imageDownloadQueue: OperationQueue = {
@@ -27,19 +18,28 @@ final class CAImageDownloadManager {
         queue.qualityOfService = .userInteractive
         return queue
     }()
-    private let imageCache = NSCache<NSString, UIImage>()
+
+    init(imageStore: CAImageStoreProtocol) {
+        self.imageStore = imageStore
+    }
 }
 
 extension CAImageDownloadManager: CAImageDownloadManagerProtocol {
-    func downloadImage(_ absoluteImageURL: String, indexPath: IndexPath?, _ completion: @escaping CAImageDownloadHandler) {
-        print("download ", absoluteImageURL)
+    func downloadImage(_ car: CACar, indexPath: IndexPath?, _ completion: @escaping CAImageDownloadHandler) {
+        print("download ", car.carImageUrl)
         completionHandler = completion
         
-        guard let url = URL(string: absoluteImageURL) else { return }
-        if let cachedImage = imageCache.object(forKey: absoluteImageURL as NSString) {
+        guard let url = URL(string: car.carImageUrl) else {
+            print("can't make url")
+            return
+        }
+        
+        // trying to get image from cache or disk
+        let imageKey = car.id
+        if let image = imageStore.image(forKey: imageKey) {
             print("return cached image for \(url)")
             OperationQueue.main.addOperation {
-                self.completionHandler?(cachedImage, url, indexPath, nil)
+                self.completionHandler?(image, url, indexPath, nil)
             }
         } else {
             // check if image currenly downloading and if yes then set high priority
@@ -56,8 +56,8 @@ extension CAImageDownloadManager: CAImageDownloadManagerProtocol {
                     operation.queuePriority = .veryHigh
                 }
                 operation.downloadHandler = { image, url, indexPath, error in
-                    if let newImage = image {
-                        self.imageCache.setObject(newImage, forKey: url.absoluteString as NSString)
+                    if let downloadedImage = image {
+                        self.imageStore.save(downloadedImage, for: imageKey)
                     }
                     OperationQueue.main.addOperation {
                         self.completionHandler?(image, url, indexPath, error)

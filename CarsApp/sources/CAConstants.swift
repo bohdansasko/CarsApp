@@ -16,3 +16,5 @@ enum CAStorybordSegue: String {
 enum CALocalizationKey: String {
     case carsLocations = "Cars Location"
 }
+
+let kCADatabaseName = "CACars"

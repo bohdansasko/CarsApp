@@ -31,9 +31,21 @@ class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
     func fetchCars() {
         viewControllerInput?.setActivityIndicator(isHidden: false)
         
+        CACoreDataManager().fetchCars({ result in
+            print("======= loaded cars from cache =====")
+            
+            switch result {
+            case .success(let carsResult):
+                carsResult?.cars().forEach({ print($0, "\n")  })
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
+        
         networkProvider.fetchCars { result in
             switch result {
             case .success(let carsResult):
+                CACoreDataManager().saveCars(carsResult!)
                 self.dataSource.cars = carsResult
             case .failure(let error):
                 self.dataSource.cars = nil

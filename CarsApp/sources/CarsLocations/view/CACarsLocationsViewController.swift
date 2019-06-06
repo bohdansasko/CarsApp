@@ -24,8 +24,8 @@ class CACarsLocationsViewController: UIViewController {
         // NOTICE: simple example how to translate string programmaticaly
         title = NSLocalizedString(CALocalizationKey.carsLocations.rawValue,
                                   comment: CALocalizationKey.carsLocations.rawValue) // TODO: should remove after review by company
-                                                                                    //       cause translation were implemented via a storyboards
-                                                                                    //       and it's break main idea of mvvw :)
+                                                                                     //       cause translation were implemented via a storyboards
+                                                                                     //       and it's break main idea of mvvw :)
 
         viewModel.configure(with: mapView)
     }
