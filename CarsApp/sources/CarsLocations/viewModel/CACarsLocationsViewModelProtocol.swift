@@ -12,9 +12,9 @@ protocol CACarsLocationsViewModelProtocol {
     var kCarAnnotationReuseIdentifier: String { get }
     
     var viewControllerInput: CACarsLocationsViewControllerInputProtocol? { get }
-    var cars: CACarsResult { get set }
+    var cars: CACarsResult! { get set }
     
-    init(with viewController: CACarsLocationsViewControllerInputProtocol, cars: CACarsResult)
+    init(with viewController: CACarsLocationsViewControllerInputProtocol)
     func configure(with mapView: MKMapView)
     
     func showCars()

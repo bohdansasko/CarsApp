@@ -17,4 +17,9 @@ enum CALocalizationKey: String {
     case carsLocations = "Cars Location"
 }
 
-let kCADatabaseName = "CACars"
+struct CAConstants {
+    private init() {}
+    
+    static let kCADatabaseName = "CACars"
+    static let kCAMapCarAnnotation = "CACarAnnotation"
+}

@@ -10,7 +10,7 @@ import CoreData
 
 final class CACoreDataManager: CADatabaseProtocol {
     let persistentStore: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: kCADatabaseName)
+        let container = NSPersistentContainer(name: CAConstants.kCADatabaseName)
         container.loadPersistentStores(completionHandler: { storeDescription, error in
             if let err = error {
                 print("Error setting up core data stack:", err)

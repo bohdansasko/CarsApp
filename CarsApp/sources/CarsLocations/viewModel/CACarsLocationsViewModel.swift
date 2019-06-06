@@ -9,14 +9,13 @@
 import MapKit
 
 final class CACarsLocationsViewModel: CACarsLocationsViewModelProtocol {
-    var kCarAnnotationReuseIdentifier: String { return "CarAnnotation" }
+    var kCarAnnotationReuseIdentifier: String { return CAConstants.kCAMapCarAnnotation }
     
     weak var viewControllerInput: CACarsLocationsViewControllerInputProtocol?
-    var cars: CACarsResult
+    var cars: CACarsResult!
     
-    required init(with viewControllerInput: CACarsLocationsViewControllerInputProtocol, cars: CACarsResult) {
+    required init(with viewControllerInput: CACarsLocationsViewControllerInputProtocol) {
         self.viewControllerInput = viewControllerInput
-        self.cars = cars
     }
     
     func configure(with mapView: MKMapView) {

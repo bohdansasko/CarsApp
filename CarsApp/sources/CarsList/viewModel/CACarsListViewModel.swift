@@ -63,7 +63,7 @@ final class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
         
         switch segue.identifier {
         case CAStorybordSegue.toCarsMap.rawValue:
-            carsMapViewController.viewModel = CACarsLocationsViewModel(with: carsMapViewController, cars: dataSource.cars!)
+            carsMapViewController.viewModel.cars = dataSource.cars!
         case CAStorybordSegue.toCarMap.rawValue:
             guard
                 let selectedCarIndexPath = selectedCarIndexPath,
@@ -71,7 +71,7 @@ final class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
                     return
             }
             let carsResult = CACarsResult(cars: [car])
-            carsMapViewController.viewModel = CACarsLocationsViewModel(with: carsMapViewController, cars: carsResult)
+            carsMapViewController.viewModel.cars = carsResult
             self.selectedCarIndexPath = nil
         default:
             break

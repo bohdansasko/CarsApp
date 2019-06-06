@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cars-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CACarsListViewController" customModule="CarsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -274,10 +274,15 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="K8G-Mr-h23" customClass="CACarsListModuleInitializer" customModule="CarsApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="BYZ-38-t0r" id="Pzv-FM-C7e"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1039.2" y="69.715142428785612"/>
         </scene>
-        <!--Cars Location-->
+        <!--View Controller-->
         <scene sceneID="uxR-4K-RbR">
             <objects>
                 <viewController title="Cars Location" id="9n6-2j-2Dv" customClass="CACarsLocationsViewController" customModule="CarsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -303,6 +308,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Usc-a1-CNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="XWK-dz-9aL" customClass="CACarsLocationsModuleInitializer" customModule="CarsApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="9n6-2j-2Dv" id="oEa-Cd-LPU"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1818" y="66"/>
         </scene>
