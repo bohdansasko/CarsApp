@@ -11,9 +11,13 @@ import UIKit
 protocol CACarsListViewModelProtocol {
     var dataSource: CACarsDataSource { get }
     var networkProvider: CANetworkProtocol { get }
+    var databaseProvider: CADatabaseProtocol { get }
     var viewControllerInput: CACarsListViewControllerInputProtocol? { get }
     
-    init(viewControllerInput: CACarsListViewControllerInputProtocol, dataSource: CACarsDataSource, networkManager: CANetworkProtocol)
+    init(viewControllerInput: CACarsListViewControllerInputProtocol,
+         dataSource: CACarsDataSource,
+         networkManager: CANetworkProtocol,
+         databaseProvider: CADatabaseProtocol)
     
     func configure()
     func fetchCars()

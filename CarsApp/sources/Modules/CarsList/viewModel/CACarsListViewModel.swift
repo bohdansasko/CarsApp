@@ -13,13 +13,16 @@ final class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
     
     var dataSource: CACarsDataSource
     var networkProvider: CANetworkProtocol
+    var databaseProvider: CADatabaseProtocol
     
     var selectedCarIndexPath: IndexPath?
     
-    required init(viewControllerInput: CACarsListViewControllerInputProtocol, dataSource: CACarsDataSource, networkManager: CANetworkProtocol) {
+    required init(viewControllerInput: CACarsListViewControllerInputProtocol, dataSource: CACarsDataSource,
+                  networkManager: CANetworkProtocol, databaseProvider: CADatabaseProtocol) {
         self.viewControllerInput = viewControllerInput
         self.dataSource = dataSource
         self.networkProvider = networkManager
+        self.databaseProvider = databaseProvider
         
         super.init()
     }
@@ -28,32 +31,38 @@ final class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
         viewControllerInput?.setupList(dataSource: dataSource, delegate: self)
     }
     
+    /// if cars exits in cache/database then fetch them from it else
+    /// fetch cars from the internet and then cache it to disk and finally
+    /// load them from cache
     func fetchCars() {
         viewControllerInput?.setActivityIndicator(isHidden: false)
         
-        CACoreDataManager().fetchCars({ result in
-            print("======= loaded cars from cache =====")
-            
-            switch result {
-            case .success(let carsResult):
-                carsResult?.cars().forEach({ print($0, "\n")  })
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        })
+        fetchDataFromCache()
         
         networkProvider.fetchCars { result in
+            if case .success(let carsResult) = result {
+                guard let carsResult = carsResult else {
+                    print("cars result equal nil")
+                    return
+                }
+                self.databaseProvider.saveCars(carsResult)
+                self.fetchDataFromCache()
+            }
+        }
+    }
+    
+    private func fetchDataFromCache() {
+        databaseProvider.fetchCars({ result in
             switch result {
             case .success(let carsResult):
-                CACoreDataManager().saveCars(carsResult!)
                 self.dataSource.cars = carsResult
             case .failure(let error):
                 self.dataSource.cars = nil
-                print(error.localizedDescription)
+                print(#function, error.localizedDescription)
             }
             self.viewControllerInput?.setActivityIndicator(isHidden: true)
             self.viewControllerInput?.refreshCarsList()
-        }
+        })
     }
     
     func prepare(for segue: UIStoryboardSegue) {

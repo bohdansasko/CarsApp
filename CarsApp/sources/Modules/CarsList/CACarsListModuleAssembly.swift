@@ -16,6 +16,8 @@ final class CACarsListModuleAssembly {
         viewController.viewModel = CACarsListViewModel(
             viewControllerInput: viewController,
             dataSource: CACarsDataSource(),
-            networkManager: networkManager)
+            networkManager: networkManager,
+            databaseProvider: CACoreDataManager.shared
+        )
     }
 }
