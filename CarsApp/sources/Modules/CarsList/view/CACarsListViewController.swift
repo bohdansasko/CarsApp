@@ -11,6 +11,7 @@ import UIKit
 final class CACarsListViewController: UIViewController {
     @IBOutlet weak var carsList: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var mapButton: UIButton!
     
     var viewModel: CACarsListViewModelProtocol!
     
@@ -49,5 +50,11 @@ extension CACarsListViewController: CACarsListViewControllerInputProtocol {
     
     func performSegue(withIdentifier identifier: String) {
         performSegue(withIdentifier: identifier, sender: self)
+    }
+    
+    func setMapButtonParams(height: CGFloat, fontSize: CGFloat, titleEdgeInsets: UIEdgeInsets) {
+        mapButton.heightAnchor.constraint(equalToConstant: height).isActive = true
+        mapButton.titleEdgeInsets = titleEdgeInsets
+        mapButton.titleLabel?.font = UIFont.verdana(withFontSize: fontSize)
     }
 }

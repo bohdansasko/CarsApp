@@ -23,12 +23,23 @@ final class CACarsListViewModel: NSObject, CACarsListViewModelProtocol {
         self.dataSource = dataSource
         self.networkProvider = networkManager
         self.databaseProvider = databaseProvider
-        
+
         super.init()
     }
     
     func configure() {
         viewControllerInput?.setupList(dataSource: dataSource, delegate: self)
+        if Utils.iPhone5() {
+            viewControllerInput?.setMapButtonParams(
+                height: 40,
+                fontSize: 15,
+                titleEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        } else {
+            viewControllerInput?.setMapButtonParams(
+                height: 60,
+                fontSize: 18,
+                titleEdgeInsets: UIEdgeInsets(top: -10, left: 0, bottom: 0, right: 0))
+        }
     }
     
     /// if cars exits in cache/database then fetch them from it else

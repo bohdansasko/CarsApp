@@ -18,4 +18,6 @@ protocol CACarsListViewControllerInputProtocol: class {
     
     func cellForRow(at indexPath: IndexPath) -> UITableViewCell?
     func performSegue(withIdentifier identifier: String)
+    
+    func setMapButtonParams(height: CGFloat, fontSize: CGFloat, titleEdgeInsets: UIEdgeInsets)
 }

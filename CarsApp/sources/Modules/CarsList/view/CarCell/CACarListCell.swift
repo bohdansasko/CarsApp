@@ -64,6 +64,6 @@ extension CACarListCell: CACarListCellProtocol {
         
         transmissionTypeLabel.text = car?.transmission
         licenseNumberLabel.text = car?.licensePlate
-        cleanlinessTypeLabel.text = car?.innerCleanliness
+        cleanlinessTypeLabel.text = car?.innerCleanliness.replacingOccurrences(of: "_", with: " ")
     }
 }
